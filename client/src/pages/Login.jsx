@@ -12,8 +12,6 @@ const Login = () => {
     setLoading(true);
     try {
       const response = await login(values);
-      console.log(response);
-      console.log(response.user.expiresAt);
       if (response.status === 200) {
         localStorage.setItem("user", JSON.stringify(response.user));
         localStorage.setItem("AccessToken", JSON.stringify(response.accessToken));
